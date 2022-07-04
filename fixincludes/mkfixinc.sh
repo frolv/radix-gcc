@@ -18,6 +18,8 @@ case $machine in
     powerpc-*-eabi*    | \
     powerpc-*-rtems*   | \
     powerpcle-*-eabisim* | \
+    *-radix* | \
+    *-*-radix* | \
     powerpcle-*-eabi* | \
     *-*-vxworks7* | \
     *-musl* )
