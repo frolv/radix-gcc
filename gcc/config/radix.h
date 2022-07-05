@@ -30,7 +30,10 @@ see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 #define LIB_SPEC "-lc"
 
 #undef  LINK_SPEC
-#define LINK_SPEC "-z max-page-size=4096"
+#define LINK_SPEC 						\
+	"%{shared:-shared} %{static:-static} "			\
+	"%{!shared: %{!static: %{rdynamic:-export-dynamic}}} "	\
+	"-z max-page-size=4096"
 
 #undef  STARTFILE_SPEC
 #define STARTFILE_SPEC "crt0.o%s crti.o%s crtbegin.o%s"
